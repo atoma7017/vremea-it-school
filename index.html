@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Vremea IT School</title>
+  </head>
+  <body>
+    <header class="bg-primary d-flex justify-content-center align-items-center">
+      <h1 class="text-white text-center">Vremea IT School</h1>
+    </header>
+    <main>
+      <section class="choose-location py-5">
+        <div class="container">
+          <h2 class="text-primary text-center ab-5">Alege-ti locatia!</h2>
+          <p class="text-center fs-6">
+            Te pregatesti sa mergi la curs si vrei sa vezi cu ce sa te imbraci? Iti venim in ajutor! Alege mai jos una dintre locatiile IT Schools si apoi
+            scrolleaza pentru a vedea vremea din orasul tau.
+          </p>
+          <p class="text-center fs-5">Orasul tau curent este <strong class="current-city"></strong></p>
+          <div class="dropdown d-flex justify-content-center">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expended="false">
+              Alege unu oras
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><button class="dropdown-item bucharest">Bucuresti</button></li>
+              <li><button class="dropdown-item timisoara">Timisoara</button></li>
+              <li><button class="dropdown-item oradea">Oradea</button></li>
+              <li><button class="dropdown-item cluj-napoca">Cluj-Napoca</button></li>
+              <li><button class="dropdown-item bistrita">Bistrița</button></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5 bg-secondary">
+        <div class="container">
+          <h2 class="text-primary text-center ab-5">Vremea curenta</h2>
+          <div class="current-weather d-flex flex-wrap justify-content-evenly align-item-center"></div>
+        </div>
+      </section>
+
+      <section class="py-5">
+        <div class="container">
+          <h2 class="text-primary text-center ab-5">Prognoza pe 5 zile</h2>
+          <div class="weather-forecast"></div>
+        </div>
+      </section>
+      <span class="material-symbols-outlined scroll-to-top"> expand_circle_up </span>
+    </main>
+    <footer class="bg-dark">
+      <div class="container">
+        <p class="text-light text-center m-0 py-3">IT School Romania © 2024. Toate drepturile sunt rezervate!</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <!-- atentie la ordinea fisiereleor. JS este un limbaj de programare sincron care ruleaza codul linie cu linie. astfel poate ajute sa ruleze codul-ul dintr-un anumit fisier care  contine o functie declara intr-un fisier scris pe un rand ulterior, iar astfel va da eroare. exemplul a fost cu index.js care se afla deasuprea fisierului WeatherFOrecast, in index se rula functia displayWeatherForecast dar dadea eroare deoarece fisierul functiei era cu cateva randuri mai joi si nu a ajuns sa fie rulat -->
+    <script src="api/endpoints.js"></script>
+    <script src="utils/scroll.js"></script>
+    <script src="utils/date.js"></script>
+    <script src="utils/weather.js"></script>
+    <script src="sections/CurrentWeather.js"></script>
+    <script src="sections/ChooseLocation.js"></script>
+    <script src="sections/WeatherForecast.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
